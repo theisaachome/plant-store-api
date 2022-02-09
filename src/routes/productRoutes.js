@@ -1,10 +1,7 @@
 const express = require("express");
+const { getAllProducts } = require("../controllers/productController");
 const router = express.Router();
 
-router.get("/",(req,res,next)=>{
-res.status(200).json({
-    success:true,
-    msg:"get all plants",
-})
-});
+router.route("/")
+    .get(getAllProducts);
 module.exports = router;
